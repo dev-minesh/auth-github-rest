@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  message-server:
+    container_name: git-auth-server
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: github-auth:latest
+    ports:
+      - 8080:8080
+    networks:
+      - spring-cloud-network
+networks:
+  spring-cloud-network:
+    driver: bridge
